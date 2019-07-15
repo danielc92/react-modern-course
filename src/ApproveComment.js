@@ -2,6 +2,9 @@ import React from 'react';
 
 
 const ApprovalComment = (props) => {
+
+    console.log(props.children)
+    
     return (
         <div className="ui card">
             <div className="content">
