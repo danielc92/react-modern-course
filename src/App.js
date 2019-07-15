@@ -6,24 +6,34 @@ export default class extends Component {
         super(props);
         this.state = {
             coordinates: {},
-            errorMessage: null
+            error: null
         }
+    }
 
+    componentDidMount() {
+        console.log("component rendered to screen")
+        
         window.navigator.geolocation.getCurrentPosition(
             (results) => {
                 this.setState({coordinates: results.coords})
             },
             (error) => {
-                this.setState({errorMessage: error.message});
+                this.setState({error: error.message});
             }
         )
     }
 
+    componentDidUpdate(){
+        console.log('component was just updated, rerendered')
+    }
+
     render() {
+
+        console.log('rendering')
         // Dont put any heavy functions in here
         // render() gets called frequently...   
         
-        if (this.state.errorMessage) return (
+        if (this.state.error) return (
             <div>
                 <p>There was an error, perhaps you have disabled location services.</p>
             </div>)
