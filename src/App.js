@@ -5,7 +5,8 @@ export default class extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            coordinates: {}
+            coordinates: {},
+            errorMessage: null
         }
 
         window.navigator.geolocation.getCurrentPosition(
@@ -13,7 +14,7 @@ export default class extends Component {
                 this.setState({coordinates: results.coords})
             },
             (error) => {
-                console.log(error);
+                this.setState({errorMessage: error.message});
             }
         )
     }
@@ -21,12 +22,20 @@ export default class extends Component {
     render() {
         // Dont put any heavy functions in here
         // render() gets called frequently...   
-        console.log('render this')
-        return (
+        
+        if (this.state.errorMessage) return (
             <div>
-                <h3>Location</h3>
-                <p>{this.state.coordinates.longitude}</p>
-            </div>
-        )
+                <p>There was an error, perhaps you have disabled location services.</p>
+            </div>)
+        
+        if (this.state.coordinates.latitude) return (
+            <div>
+                <p>Location has been loaded {this.state.coordinates.latitude}</p>
+            </div>)
+
+        return (
+            <div className="">
+                <p>Loading...</p>
+            </div>)
     }
 }
