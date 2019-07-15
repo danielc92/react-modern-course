@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CommentDetail from './CommentDetail';
 import faker from 'faker';
+import ApproveComment from './ApproveComment';
 const {image} = faker;
 
 // Create Component
@@ -10,11 +11,14 @@ const App = () => {
 
   return (
     <div className="ui container comments">
-      <CommentDetail
-        commentText={"Nice blog post!"}
-        avatar={image.avatar()}
-        author={'Duke'}
-        postedAt={"Today at 4.45PM"}/>
+      <ApproveComment>
+        <CommentDetail
+            commentText={"Nice blog post!"}
+            avatar={image.avatar()}
+            author={'Duke'}
+            postedAt={"Today at 4.45PM"}/>
+      </ApproveComment>
+      
       <CommentDetail
         commentText={"What is this?"}
         avatar={image.avatar()}
