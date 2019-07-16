@@ -12,6 +12,7 @@ export default class App extends Component {
     render() {
         return (
             <div className="ui container" style={{marginTop: '2rem'}}>
+                <p>afsdfsad - {process.env.REACT_APP_FULLNAME}</p>
                 <SearchBar onSearch={this.onSearchSubmit}/>
             </div>
         )
