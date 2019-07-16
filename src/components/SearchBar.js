@@ -22,13 +22,13 @@ export default class SearchBar extends Component {
         console.log(this.state.clientInput)
     }
     render() {
-
-        this.props.onSearch('hey there');
-        
+        console.log('Rendering Search component')
+        this.props.onSearch('apples')
         return (
             <div className="ui segment">
                 <form onSubmit={this.handleFormSubmit} className="ui form">
                     <div className="field">
+                
                     <label>Image Search</label>
                     <input 
                     value={this.state.clientInput}
