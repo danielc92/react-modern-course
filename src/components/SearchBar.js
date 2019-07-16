@@ -6,13 +6,17 @@ export default class SearchBar extends Component {
         userInput: null
     }
     
+    handleClientInput = (event) => {
+        console.log(event.target.value);
+    }
+
     render() {
         return (
             <div className="ui segment">
                 <form className="ui form">
                     <div className="field">
                     <label>Image Search</label>
-                    <input type="text"></input>
+                    <input onChange={this.handleClientInput} type="text"></input>
                     </div>
                     
                 </form>
