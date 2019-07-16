@@ -3,16 +3,18 @@ import React, { Component } from 'react'
 export default class ImageList extends Component {
     render() {
         return (
-            <div>
+            <section className="ui three column grid">
                 {
                     this.props.images.map(image => {
                         return(
-                        <div key={image.id}>
-                            <img src={image.urls.thumb}></img>
-                        </div>
-                        )})
+                            <div className="column">
+                                <div className="ui segment">
+                                <img className="ui fluid image" key={image.id} src={image.urls.regular}></img>
+                                </div>
+                            </div>
+                    )})
                 }
-            </div>
+            </section>
         )
     }
 }

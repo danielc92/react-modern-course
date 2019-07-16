@@ -21,10 +21,9 @@ export default class App extends Component {
         })
 
         const { results } = response.data
+        console.log('Found these results', results)
         
-        console.log(results)
-        
-        this.setState({results: response.data.results})
+        this.setState({results})
     }
     render() {
         console.log('Rendering App component')
