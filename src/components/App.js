@@ -3,10 +3,16 @@ import SearchBar from './SearchBar';
 
 
 export default class App extends Component {
+    
+    state = {}
+
+    onSearchSubmit = (text) => {
+        console.log(`Logging - ${text}`)
+    }
     render() {
         return (
             <div className="ui container" style={{marginTop: '2rem'}}>
-                <SearchBar/>
+                <SearchBar onSearch={this.onSearchSubmit}/>
             </div>
         )
     }
