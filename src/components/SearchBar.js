@@ -20,10 +20,11 @@ export default class SearchBar extends Component {
     handleFormSubmit = (event) => {
         event.preventDefault()
         console.log(this.state.clientInput)
+        this.props.onSearch(this.state.clientInput)
     }
+
     render() {
         console.log('Rendering Search component')
-        this.props.onSearch('apples')
         return (
             <div className="ui segment">
                 <form onSubmit={this.handleFormSubmit} className="ui form">
