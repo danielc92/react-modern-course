@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 export default class extends Component {
 
@@ -37,12 +39,9 @@ export default class extends Component {
         
         if (this.state.coordinates.latitude) return (
             <div>
-                <p>Location has been loaded {this.state.coordinates.latitude}</p>
+                <SeasonDisplay coordinates={this.state.coordinates}/>
             </div>)
 
-        return (
-            <div className="">
-                <p>Loading...</p>
-            </div>)
+        return <Spinner message={"Enable location services to load data."}/>
     }
 }
