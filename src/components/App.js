@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SearchBar from './SearchBar';
 import ImageList from './ImageList';
+import './App.css';
 
 
 const ROOT_URL = 'https://api.unsplash.com/search/photos'

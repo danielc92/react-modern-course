@@ -1,27 +1,49 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
 
 export default class ImageList extends Component {
+
     render() {
+        
+        const imageContainer = {
+            borderRadius: '.35rem',
+            border: '1px solid #f2f2f2',
+            padding: '.8rem'
+        }
+        const imageStyle = {
+            borderRadius: '.6rem'
+        }
+
         return (
-            <React.Fragment>
-            <section className="ui three column grid">
+            <section id="photos">
                 {
                     this.props.images.map(image => {
                         return(
-                            <div className="column">
-                                <div className="ui segment">
+                            <React.Fragment>
+                                <article style={imageContainer}>
                                     <img 
-                                    className="ui image" 
                                     key={image.id} 
                                     src={image.urls.regular}
+                                    style={imageStyle}
                                     >
                                     </img>
-                                </div>
-                            </div>
-                    )})
+                                </article>
+                            </React.Fragment>)})
                 }
             </section>
-            </React.Fragment>
         )
     }
 }
+
+
+
+// <div className="column">
+//     <div className="ui segment">
+//         <img 
+//         className="ui image" 
+//         key={image.id} 
+//         src={image.urls.regular}
+//         >
+//         </img>
+//     </div>
+// </div></div>
