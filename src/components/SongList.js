@@ -10,8 +10,21 @@ class SongList extends Component {
                 <h3>song list</h3>
                 <ul>
                     {
-                        songs.map(item => 
-                        (<li>{item.title} :: {item.artist} :: {item.rank}</li>))
+                        songs.map(item => {
+                            return (
+                                <div className="item" key={item.rank}>
+                                    <div className="right floated content">
+                                        <button className="ui button primary">
+
+                                        </button>
+                                    </div>
+
+                                    <div className="content">
+                                        {item.title}
+                                    </div>
+                                </div>
+                            )
+                        })
                     }
                 </ul>
             </div>
