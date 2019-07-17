@@ -6,9 +6,7 @@ export default class ImageList extends Component {
     render() {
         
         const imageContainer = {
-            borderRadius: '.35rem',
-            border: '1px solid #f2f2f2',
-            padding: '.8rem'
+            marginBottom: '1rem'
         }
         const imageStyle = {
             borderRadius: '.6rem'
