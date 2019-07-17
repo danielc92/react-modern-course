@@ -5,10 +5,9 @@ import SongList from './SongList';
 export default class App extends Component {
     render() {
         return (
-            <div>
-                <h2>app</h2>
+            <section>
                 <SongList/>
-            </div>
+            </section>
         )
     }
 }

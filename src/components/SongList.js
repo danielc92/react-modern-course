@@ -6,27 +6,24 @@ class SongList extends Component {
     render() {
         const { songs } = this.props
         return (
-            <div>
-                <h3>song list</h3>
-                <ul>
-                    {
-                        songs.map(item => {
-                            return (
-                                <div className="item" key={item.rank}>
-                                    <div className="right floated content">
-                                        <button className="ui button primary">
-
-                                        </button>
-                                    </div>
-
-                                    <div className="content">
-                                        {item.title}
-                                    </div>
+            <div className="ui divided list">
+                {
+                    songs.map(item => {
+                        return (
+                            <div className="item" key={item.rank}>
+                                <div className="right floated content">
+                                    <button className="ui button primary">
+                                        Select
+                                    </button>
                                 </div>
-                            )
-                        })
-                    }
-                </ul>
+
+                                <div className="content">
+                                    {item.title}
+                                </div>
+                            </div>
+                        )
+                    })
+                }
             </div>
         )
     }
