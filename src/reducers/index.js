@@ -7,3 +7,12 @@ const songsReducer = () => {
         { title: 'Ut aliquip ipsum deserunt aliqua Lorem excepteur.', duration: '3:34'}
     ]
 }
+
+const selectedSongReducer = (selectedSong = null, action) => {
+    switch (action.type) {
+        case 'SONG_SELECTED':
+            return action.payload
+        default:
+            return selectedSong
+    }
+}
