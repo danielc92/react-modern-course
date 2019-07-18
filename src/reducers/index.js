@@ -1,17 +1,6 @@
 import {combineReducers} from 'redux';
-
-const dummyReducer = () => {
-  return [
-    {
-      name: "daniel"
-    }, {
-      name: "jennifer"
-    }, {
-      name: "jorge"
-    }
-  ]
-}
+import postReducer from './postReducer'
 
 export const rootReducer = combineReducers({
-    dummy: dummyReducer
+    posts: postReducer
 })
