@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { fetchPosts } from '../actions';
+import { fetchPosts, fetchPostsAndUsers } from '../actions';
 import UserHeader from './UserHeader';
 
 class PostList extends Component {
     
     componentDidMount () {
-        this.props.fetchPosts()
+        this.props.fetchPostsAndUsers()
     }
     
     renderList() {
@@ -27,7 +27,6 @@ class PostList extends Component {
     }
 
     render() {
-        console.log('oagihoeug', this.props.posts)
         return <section className="ui relaxed divided list">
             {this.renderList()}
         </section>
@@ -40,4 +39,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { fetchPosts })(PostList)
+export default connect(mapStateToProps, { fetchPosts, fetchPostsAndUsers })(PostList)

@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchUser } from '../actions';
 
 
 class UserHeader extends Component {
 
-    componentDidMount() {
-        this.props.fetchUser(this.props.userId)
-    }
-
     render() {
-        console.log(this.props)
+        const { user } = this.props
         return (
-            <div>
-                <h3>User Header { this.props.userId }</h3>
-                <h3>{ this.props.user ? this.props.user.name : 'user is undefined'  }</h3>
+            <div style={{ padding: '1rem', border: '1px solid #f8f8f8'}}>
+                { user ? 
+                <div>
+                    <h3>{ user.name }</h3>
+                    <p>{ user.email }</p>
+                    <p>{ user.username }</p>
+                </div> : 
+                <h3>User cannot be located...</h3>  }
             </div>
         )
     }
@@ -26,4 +26,4 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 //
-export default connect(mapStateToProps, { fetchUser })(UserHeader);
+export default connect(mapStateToProps)(UserHeader);
