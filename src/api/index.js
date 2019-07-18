@@ -1,3 +1,5 @@
-export default {
-    BASE_URL: 'https://jsonplaceholder.typicode/posts'
-}
+import axios from 'axios'
+
+export default axios.create({
+    baseURL: 'https://jsonplaceholder.typicode/'
+})
