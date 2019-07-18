@@ -7,7 +7,7 @@ import { thisTypeAnnotation } from '@babel/types';
 class PostList extends Component {
     
     componentDidMount () {
-        console.log(this.props.fetchPosts())
+        console.log(this.props.fetchPosts())    
     }
     
     render() {
