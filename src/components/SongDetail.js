@@ -3,27 +3,30 @@ import { connect } from 'react-redux';
 
 class SongDetail extends Component {
     render() {
-        console.log(this.props)
+        const { selectedSong } = this.props;
+        const boxStyle = {padding: '1rem 4rem', borderRadius: '.5rem', border: '1px solid #f3f3f3'}
         return (
-            <React.Fragment>
-               <p>{this.props.selectedSong}</p>
-               {this.props.songs.map(item => {
-                   if (item.title === this.props.selectedSong) {
-                       return (
-                       <article style={{ padding: '1rem', border: '1px solid #f2f2f2'}}>
-                            <h1>{item.title}</h1>
-                            <h3>{item.artist}</h3>
-                            <p>{item.duration}</p>
-                        </article>)
-                   }
-               })}
-            </React.Fragment>
+        <React.Fragment>
+            { 
+                selectedSong ? 
+                <article style={boxStyle}>
+                    <h1>{ selectedSong.title }</h1>
+                    <p>{ selectedSong.artist }</p>
+                    <p>{ selectedSong.rank }</p>
+                </article> : 
+                    <article style={boxStyle}>
+                    <h3>You need to select a song to view song details.</h3>
+                </article> 
+            }  
+        </React.Fragment>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-    return state
+    return {
+        selectedSong: state.selectedSong
+    }
 }
 
 export default connect(mapStateToProps)(SongDetail)

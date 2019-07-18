@@ -6,7 +6,7 @@ import SongDetail from './SongDetail';
 export default class App extends Component {
     render() {
         return (
-            <section>
+            <section className="ui container">
                 <SongList/>
                 <SongDetail/>
             </section>
